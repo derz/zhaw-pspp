@@ -11,7 +11,7 @@ program montecarlo
 	read*, samples
 
 	call cpu_time(t1)
-	!$omp parallel private(hits,tid,i,r,x,y) num_threads(threads)
+	!$omp parallel private(tid,i,x,y) num_threads(threads)
 	tid = omp_get_thread_num()
 
 	do i = 1, samples/threads
